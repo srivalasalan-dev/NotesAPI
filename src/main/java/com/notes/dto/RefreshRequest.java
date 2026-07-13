@@ -2,8 +2,10 @@ package com.notes.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
-public class RefreshRequest {
+public record RefreshRequest(
+        @NotBlank
+         String refreshToken
+) {
 
-    @NotBlank
-    private String refreshToken;
+
 }

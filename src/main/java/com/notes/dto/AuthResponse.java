@@ -1,7 +1,7 @@
 package com.notes.dto;
 
-public class AuthResponse {
+public record AuthResponse( String accessToken,
+        String refreshToken) {
 
-    private String accessToken;
-    private String refreshToken;
+
 }
