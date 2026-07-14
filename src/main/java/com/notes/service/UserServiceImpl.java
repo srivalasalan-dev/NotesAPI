@@ -2,6 +2,7 @@ package com.notes.service;
 
 import com.notes.dto.RegisterRequest;
 import com.notes.entity.Users;
+import com.notes.exception.UserAlreadyExistsException;
 import com.notes.repository.UserRepository;
 import jakarta.persistence.EntityExistsException;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +15,7 @@ public class UserServiceImpl implements UserService{
     @Override
     public void register( RegisterRequest request) {
         if(repo.existsByUsername(request.username())){
-            throw new EntityExistsException("Username Already Exists");
+            throw new UserAlreadyExistsException("Username Already Exists");
         }
         if(repo.existsByEmail(request.email())){
             throw new EntityExistsException("Email Already Exists");
