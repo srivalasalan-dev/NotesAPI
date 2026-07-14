@@ -1,3 +1,20 @@
 spring:
   application:
     name: NotesApi
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/notes
+    username: root
+    password: root
+    driver-class-name: com.cj.mysql.jdbc.Driver
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+  secret: P4J0AqZJ7Xz8gL2D4p5q1Kq7j8z9yA1bC3dE5fG6hI7jK8lM9nO0pQ==
+  access-token-expiration: 900000
+  refresh-token-expiration: 604800000
